@@ -9,7 +9,7 @@ Here is the conversation history: {context}
 Question: {question}
 Answer:"""
 
-model = OllamaLLM(model="llama3", port = 11434)
+model = OllamaLLM(model="llama3")
 prompt_template = ChatPromptTemplate.from_template(template)
 chain = prompt_template | model
 
