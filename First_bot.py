@@ -2,14 +2,14 @@ from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 import streamlit as st
 
-st.title("Chat with llama3")
+st.title("Chat with llama3", port = 11434)
 
 template = """Answer the question below
 Here is the conversation history: {context}
 Question: {question}
 Answer:"""
 
-model = OllamaLLM(model="llama3")
+model = OllamaLLM(model="llama3", port = 11434)
 prompt_template = ChatPromptTemplate.from_template(template)
 chain = prompt_template | model
 
