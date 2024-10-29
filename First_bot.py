@@ -9,7 +9,7 @@ Here is the conversation history: {context}
 Question: {question}
 Answer:"""
 
-model = OllamaLLM(model="llama3")
+model = OllamaLLM(model="llama3", port = 11434)
 prompt_template = ChatPromptTemplate.from_template(template)
 chain = prompt_template | model
 
@@ -33,4 +33,3 @@ st.write("### Conversation History:")
 for entry in st.session_state.context.split("\n"):
     if entry.strip():
         st.write(entry)
-
